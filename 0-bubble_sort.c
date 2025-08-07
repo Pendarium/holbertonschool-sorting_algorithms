@@ -11,33 +11,24 @@
 
 void bubble_sort(int *array, size_t size)
 {
-size_t index;
-size_t count;
-int temp;
+    size_t index, count;
+    int temp;
 
-if (array == NULL || size < 2)
-/* Vérifie que le tableau existe et qu'il a au moins deux éléments */
-return;
+    if (array == NULL || size < 2)
+        return;
 
-	for (index = 0; index < size - 1; index++)
-	/* Boucle externe : effectue plusieurs passes dans le tableau */
-	{
-		for (count = size - 1; count > index; count--)
-		/* Boucle interne : compare les éléments adjacents en remontant */
-		{
-			if (array[count] < array[count - 1])
-			/* Si les éléments sont dans le mauvais ordre, on les échange */
-			{
-			temp = array[count];
-			/* Stocke temporairement l'élément actuel */
-			array[count] = array[count - 1];
-			/* Déplace l'élément précédent vers la droite */
-			array[count - 1] = temp;
-			/* Replace l'élément temporaire à gauche */
+    for (index = 0; index < size - 1; index++)
+    {
+        for (count = size - 1; count > index; count--)
+        {
+            if (array[count] < array[count - 1])
+            {
+                temp = array[count];
+                array[count] = array[count - 1];
+                array[count - 1] = temp;
 
-			print_array(array, size);
-			/* Affiche le tableau après chaque échange */
-			}
-		}
-	}
+                print_array(array, size);
+            }
+        }
+    }
 }
