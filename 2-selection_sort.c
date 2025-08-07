@@ -14,25 +14,19 @@ void selection_sort(int *array, size_t size)
 		return;
 	/* Parcourt le tableau jusqu'à l'avant-dernier élément */
 	for (i = 0; i < size - 1; i++)
-	{
-		/* Suppose que l'élément courant est le minimum */
+	{	/* Suppose que l'élément courant est le minimum */
 		min_idx = i;
 		/* Cherche l'index du plus petit élément restant dans le tableau */
 		for (j = i + 1; j < size; j++)
-		{
-			/* Si un élément plus petit est trouvé, met à jour min_idx */
+		{	/* Si un élément plus petit est trouvé, met à jour min_idx */
 			if (array[j] < array[min_idx])
-				min_idx = j;
-		}
-		/* Si un plus petit élément a été trouvé, on effectue l'échange */
+				min_idx = j; }
 		if (min_idx != i)
-		{
+		{	/* Si un plus petit élément a été trouvé, on effectue l'échange */
 			/* Échange les éléments à l'index i et min_idx */
 			tmp = array[i];
 			array[i] = array[min_idx];
 			array[min_idx] = tmp;
-			/* Affiche le tableau après l'échange */
-			print_array(array, size);
-		}
+			print_array(array, size); /* Affiche le tableau après l'échange */}
 	}
 }
